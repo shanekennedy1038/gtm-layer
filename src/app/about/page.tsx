@@ -42,24 +42,21 @@ export default function About() {
   return (
     <div style={{ paddingTop: "80px" }}>
       {/* Hero */}
-      <section className="py-24 relative overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(59,130,246,0.1) 0%, transparent 70%)",
-          }}
-        />
+      <section className="py-24" style={{ background: "#FFFFFF" }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <span
             className="text-xs font-semibold uppercase tracking-widest"
-            style={{ color: "#3B82F6" }}
+            style={{ color: "#019CE2" }}
           >
             About GTM Layer
           </span>
           <h1
             className="text-5xl md:text-6xl font-bold mt-4 mb-6"
-            style={{ fontFamily: "var(--font-sora)", letterSpacing: "-0.02em" }}
+            style={{
+              fontFamily: "var(--font-sora)",
+              letterSpacing: "-0.02em",
+              color: "#1D1D1F",
+            }}
           >
             Built by ERP practitioners.
             <br />
@@ -67,7 +64,7 @@ export default function About() {
           </h1>
           <p
             className="text-lg leading-relaxed max-w-2xl mx-auto"
-            style={{ color: "#9CA3AF" }}
+            style={{ color: "#6E6E73" }}
           >
             GTM Layer was founded with a single thesis: that boutique and
             mid-size ERP partners deserve access to the same calibre of
@@ -78,7 +75,7 @@ export default function About() {
       </section>
 
       {/* Story */}
-      <section className="py-20" style={{ background: "#060912" }}>
+      <section className="py-20" style={{ background: "#F5F5F7" }}>
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span
@@ -89,11 +86,14 @@ export default function About() {
             </span>
             <h2
               className="text-3xl font-bold mt-3 mb-6"
-              style={{ fontFamily: "var(--font-sora)" }}
+              style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
             >
               Why we built GTM Layer
             </h2>
-            <div className="flex flex-col gap-5 text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>
+            <div
+              className="flex flex-col gap-5 text-sm leading-relaxed"
+              style={{ color: "#6E6E73" }}
+            >
               <p>
                 ERP partner sales is one of the most complex go-to-market
                 challenges in B2B. Long sales cycles, multi-stakeholder buying
@@ -123,38 +123,56 @@ export default function About() {
             </div>
           </div>
 
-          <div className="rounded-2xl p-8 border"
-            style={{
-              background: "rgba(59,130,246,0.05)",
-              borderColor: "rgba(59,130,246,0.2)",
-            }}
+          <div
+            className="rounded-2xl p-8 border bg-white"
+            style={{ borderColor: "rgba(1, 156, 226, 0.2)" }}
           >
-            <h3 className="text-xl font-bold mb-6" style={{ fontFamily: "var(--font-sora)" }}>
+            <h3
+              className="text-xl font-bold mb-6"
+              style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
+            >
               The GTM Layer difference
             </h3>
             <div className="flex flex-col gap-6">
               {[
                 {
                   label: "Generic agency",
-                  items: ["General B2B lists", "Offshore SDR volume", "Vanity metrics", "No ecosystem knowledge"],
+                  items: [
+                    "General B2B lists",
+                    "Offshore SDR volume",
+                    "Vanity metrics",
+                    "No ecosystem knowledge",
+                  ],
                   bad: true,
                 },
                 {
                   label: "GTM Layer",
-                  items: ["ERP-specific intelligence", "AI-augmented execution", "Pipeline and meetings", "Deep APAC ecosystem knowledge"],
+                  items: [
+                    "ERP-specific intelligence",
+                    "AI-augmented execution",
+                    "Pipeline and meetings",
+                    "Deep APAC ecosystem knowledge",
+                  ],
                   bad: false,
                 },
               ].map((col) => (
                 <div key={col.label}>
-                  <div className="text-xs font-bold uppercase tracking-widest mb-3"
-                    style={{ color: col.bad ? "#6B7280" : "#06B6D4" }}>
+                  <div
+                    className="text-xs font-bold uppercase tracking-widest mb-3"
+                    style={{ color: col.bad ? "#86868B" : "#019CE2" }}
+                  >
                     {col.label}
                   </div>
                   <ul className="flex flex-col gap-2">
                     {col.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-sm"
-                        style={{ color: col.bad ? "#6B7280" : "#D1D5DB" }}>
-                        <span className="text-base">{col.bad ? "✕" : "✓"}</span>
+                      <li
+                        key={item}
+                        className="flex items-center gap-2 text-sm"
+                        style={{ color: col.bad ? "#86868B" : "#374151" }}
+                      >
+                        <span className="text-base">
+                          {col.bad ? "✕" : "✓"}
+                        </span>
                         {item}
                       </li>
                     ))}
@@ -167,18 +185,18 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="py-20">
+      <section className="py-20" style={{ background: "#FFFFFF" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <span
               className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: "#3B82F6" }}
+              style={{ color: "#019CE2" }}
             >
               What We Stand For
             </span>
             <h2
               className="text-3xl font-bold mt-3"
-              style={{ fontFamily: "var(--font-sora)" }}
+              style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
             >
               Our operating principles
             </h2>
@@ -187,19 +205,22 @@ export default function About() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="card-hover rounded-2xl p-8 border"
-                style={{
-                  background: "rgba(255,255,255,0.02)",
-                  borderColor: "rgba(255,255,255,0.08)",
-                }}
+                className="card-hover rounded-2xl p-8 border bg-white"
+                style={{ borderColor: "rgba(0,0,0,0.08)" }}
               >
                 <h3
                   className="text-lg font-bold mb-3"
-                  style={{ fontFamily: "var(--font-sora)" }}
+                  style={{
+                    fontFamily: "var(--font-sora)",
+                    color: "#1D1D1F",
+                  }}
                 >
                   {v.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "#6E6E73" }}
+                >
                   {v.description}
                 </p>
               </div>
@@ -209,7 +230,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="py-20" style={{ background: "#060912" }}>
+      <section className="py-20" style={{ background: "#F5F5F7" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <span
@@ -220,7 +241,7 @@ export default function About() {
             </span>
             <h2
               className="text-3xl font-bold mt-3"
-              style={{ fontFamily: "var(--font-sora)" }}
+              style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
             >
               Practitioners, not theorists
             </h2>
@@ -229,27 +250,30 @@ export default function About() {
             {team.map((member) => (
               <div
                 key={member.name}
-                className="max-w-lg rounded-2xl p-10 border text-center"
-                style={{
-                  background: "rgba(59,130,246,0.05)",
-                  borderColor: "rgba(59,130,246,0.2)",
-                }}
+                className="max-w-lg rounded-2xl p-10 border text-center bg-white"
+                style={{ borderColor: "rgba(1, 156, 226, 0.2)" }}
               >
                 <div
                   className="w-16 h-16 rounded-full mx-auto mb-5 flex items-center justify-center text-white font-bold text-2xl"
                   style={{
-                    background: "linear-gradient(135deg, #3B82F6, #06B6D4)",
+                    background: "linear-gradient(135deg, #019CE2, #06B6D4)",
                   }}
                 >
                   {member.name[0]}
                 </div>
-                <h3 className="text-xl font-bold mb-1" style={{ fontFamily: "var(--font-sora)" }}>
+                <h3
+                  className="text-xl font-bold mb-1"
+                  style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
+                >
                   {member.name}
                 </h3>
-                <div className="text-sm mb-4" style={{ color: "#3B82F6" }}>
+                <div className="text-sm mb-4" style={{ color: "#019CE2" }}>
                   {member.role}
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "#6E6E73" }}
+                >
                   {member.bio}
                 </p>
               </div>
@@ -259,19 +283,25 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 text-center" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+      <section
+        className="py-24 text-center"
+        style={{ background: "#FFFFFF", borderTop: "1px solid rgba(0,0,0,0.06)" }}
+      >
         <div className="max-w-2xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "var(--font-sora)" }}>
+          <h2
+            className="text-3xl font-bold mb-4"
+            style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
+          >
             Want to know more?
           </h2>
-          <p className="mb-8 text-base" style={{ color: "#9CA3AF" }}>
+          <p className="mb-8 text-base" style={{ color: "#6E6E73" }}>
             Get in touch for a no-obligation conversation about your pipeline
             challenges.
           </p>
           <Link
             href="/contact"
             className="btn-glow inline-block px-8 py-4 rounded-xl text-base font-semibold text-white"
-            style={{ background: "linear-gradient(135deg, #3B82F6, #06B6D4)" }}
+            style={{ background: "linear-gradient(135deg, #019CE2, #06B6D4)" }}
           >
             Start the Conversation
           </Link>

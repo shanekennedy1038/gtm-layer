@@ -19,7 +19,9 @@ const layers = [
       "Competitive intelligence and whitespace mapping",
       "ICP scoring and account prioritisation",
     ],
-    color: "#3B82F6",
+    color: "#019CE2",
+    bgTint: "rgba(1, 156, 226, 0.06)",
+    borderColor: "rgba(1, 156, 226, 0.18)",
   },
   {
     id: "agent",
@@ -34,6 +36,8 @@ const layers = [
       "Campaign Brief Agent — turns ICP data into ready-to-run campaigns",
     ],
     color: "#06B6D4",
+    bgTint: "rgba(6, 182, 212, 0.06)",
+    borderColor: "rgba(6, 182, 212, 0.18)",
   },
   {
     id: "gtm",
@@ -47,7 +51,9 @@ const layers = [
       "Campaign and sequence management",
       "Pipeline reporting and cadence review",
     ],
-    color: "#8B5CF6",
+    color: "#7C3AED",
+    bgTint: "rgba(124, 58, 237, 0.06)",
+    borderColor: "rgba(124, 58, 237, 0.18)",
   },
 ];
 
@@ -78,42 +84,32 @@ export default function Home() {
       {/* Hero */}
       <section
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{ paddingTop: "96px" }}
+        style={{ paddingTop: "96px", background: "#FFFFFF" }}
       >
-        {/* Background grid */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(59,130,246,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.15) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        {/* Radial glow */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(59,130,246,0.12) 0%, transparent 70%)",
-          }}
-        />
-
         <div className="relative max-w-5xl mx-auto px-6 text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-8"
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium mb-8"
             style={{
-              borderColor: "rgba(59, 130, 246, 0.3)",
-              background: "rgba(59, 130, 246, 0.08)",
-              color: "#93C5FD",
-            }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" style={{ backgroundColor: "#06B6D4" }} />
+              borderColor: "rgba(1, 156, 226, 0.25)",
+              background: "rgba(1, 156, 226, 0.06)",
+              color: "#019CE2",
+            }}
+          >
+            <span
+              className="w-1.5 h-1.5 rounded-full"
+              style={{ backgroundColor: "#06B6D4" }}
+            />
             Agentic AI Go-To-Market · ERP Specialists · APAC
           </div>
 
           <h1
             className="text-5xl md:text-7xl font-bold leading-tight mb-6"
-            style={{ fontFamily: "var(--font-sora)", letterSpacing: "-0.02em" }}
+            style={{
+              fontFamily: "var(--font-sora)",
+              letterSpacing: "-0.02em",
+              color: "#1D1D1F",
+            }}
           >
             Pipeline at scale.
             <br />
@@ -122,7 +118,7 @@ export default function Home() {
 
           <p
             className="text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
-            style={{ color: "#9CA3AF" }}
+            style={{ color: "#6E6E73" }}
           >
             GTM Layer is a specialist go-to-market agency for SAP, Oracle,
             Microsoft, and NetSuite partners in Australia and APAC. We combine a
@@ -135,7 +131,7 @@ export default function Home() {
               href="/contact"
               className="btn-glow px-8 py-4 rounded-xl text-base font-semibold text-white"
               style={{
-                background: "linear-gradient(135deg, #3B82F6, #06B6D4)",
+                background: "linear-gradient(135deg, #019CE2, #06B6D4)",
               }}
             >
               Book a Discovery Call
@@ -144,9 +140,9 @@ export default function Home() {
               href="/services"
               className="px-8 py-4 rounded-xl text-base font-semibold border transition-all duration-200"
               style={{
-                color: "#D1D5DB",
-                borderColor: "rgba(255,255,255,0.15)",
-                background: "rgba(255,255,255,0.04)",
+                color: "#1D1D1F",
+                borderColor: "rgba(0,0,0,0.12)",
+                background: "#FFFFFF",
               }}
             >
               See How It Works
@@ -154,8 +150,10 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20 border-t pt-12"
-            style={{ borderColor: "rgba(255,255,255,0.08)" }}>
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-20 border-t pt-12"
+            style={{ borderColor: "rgba(0,0,0,0.08)" }}
+          >
             {stats.map((s) => (
               <div key={s.value} className="text-center">
                 <div
@@ -164,7 +162,7 @@ export default function Home() {
                 >
                   {s.value}
                 </div>
-                <div className="text-sm" style={{ color: "#6B7280" }}>
+                <div className="text-sm" style={{ color: "#86868B" }}>
                   {s.label}
                 </div>
               </div>
@@ -174,22 +172,22 @@ export default function Home() {
       </section>
 
       {/* Three Layers */}
-      <section className="py-32" style={{ background: "#060912" }}>
+      <section className="py-32" style={{ background: "#F5F5F7" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <span
               className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: "#3B82F6" }}
+              style={{ color: "#019CE2" }}
             >
               How It Works
             </span>
             <h2
               className="text-4xl md:text-5xl font-bold mt-3 mb-4"
-              style={{ fontFamily: "var(--font-sora)" }}
+              style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
             >
               The Three Layers
             </h2>
-            <p className="text-lg max-w-xl mx-auto" style={{ color: "#6B7280" }}>
+            <p className="text-lg max-w-xl mx-auto" style={{ color: "#6E6E73" }}>
               Our platform stacks intelligence, automation, and human execution
               into a unified go-to-market system.
             </p>
@@ -199,11 +197,8 @@ export default function Home() {
             {layers.map((layer) => (
               <div
                 key={layer.id}
-                className="card-hover rounded-2xl p-8 border"
-                style={{
-                  background: "rgba(255,255,255,0.03)",
-                  borderColor: "rgba(255,255,255,0.08)",
-                }}
+                className="card-hover rounded-2xl p-8 border bg-white"
+                style={{ borderColor: layer.borderColor }}
               >
                 <span
                   className="text-xs font-bold uppercase tracking-widest mb-4 block"
@@ -213,20 +208,27 @@ export default function Home() {
                 </span>
                 <h3
                   className="text-2xl font-bold mb-4"
-                  style={{
-                    fontFamily: "var(--font-sora)",
-                    color: layer.color,
-                  }}
+                  style={{ fontFamily: "var(--font-sora)", color: layer.color }}
                 >
                   {layer.title}
                 </h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ color: "#9CA3AF" }}>
+                <p
+                  className="text-sm leading-relaxed mb-6"
+                  style={{ color: "#6E6E73" }}
+                >
                   {layer.description}
                 </p>
                 <ul className="flex flex-col gap-2.5">
                   {layer.points.map((pt) => (
-                    <li key={pt} className="flex items-start gap-2.5 text-sm" style={{ color: "#D1D5DB" }}>
-                      <span className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: layer.color }} />
+                    <li
+                      key={pt}
+                      className="flex items-start gap-2.5 text-sm"
+                      style={{ color: "#374151" }}
+                    >
+                      <span
+                        className="mt-1.5 w-1 h-1 rounded-full flex-shrink-0"
+                        style={{ backgroundColor: layer.color }}
+                      />
                       {pt}
                     </li>
                   ))}
@@ -239,7 +241,7 @@ export default function Home() {
             <Link
               href="/services"
               className="inline-flex items-center gap-2 text-sm font-medium transition-colors duration-200"
-              style={{ color: "#3B82F6" }}
+              style={{ color: "#019CE2" }}
             >
               Explore all services →
             </Link>
@@ -248,7 +250,7 @@ export default function Home() {
       </section>
 
       {/* Social Proof */}
-      <section className="py-32" style={{ background: "#0A0F1E" }}>
+      <section className="py-32" style={{ background: "#FFFFFF" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span
@@ -259,9 +261,11 @@ export default function Home() {
             </span>
             <h2
               className="text-4xl font-bold mt-3"
-              style={{ fontFamily: "var(--font-sora)" }}
+              style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
             >
-              Built for ERP partners. <br />Proven in the APAC market.
+              Built for ERP partners.
+              <br />
+              Proven in the APAC market.
             </h2>
           </div>
 
@@ -271,16 +275,26 @@ export default function Home() {
                 key={i}
                 className="rounded-2xl p-8 border"
                 style={{
-                  background: "rgba(255,255,255,0.03)",
-                  borderColor: "rgba(59, 130, 246, 0.15)",
+                  background: "#F5F5F7",
+                  borderColor: "rgba(1, 156, 226, 0.15)",
                 }}
               >
-                <p className="text-base italic leading-relaxed mb-6" style={{ color: "#D1D5DB" }}>
+                <p
+                  className="text-base italic leading-relaxed mb-6"
+                  style={{ color: "#374151" }}
+                >
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
-                  <div className="text-sm font-semibold text-white">{t.name}</div>
-                  <div className="text-xs mt-0.5" style={{ color: "#6B7280" }}>{t.company}</div>
+                  <div
+                    className="text-sm font-semibold"
+                    style={{ color: "#1D1D1F" }}
+                  >
+                    {t.name}
+                  </div>
+                  <div className="text-xs mt-0.5" style={{ color: "#86868B" }}>
+                    {t.company}
+                  </div>
                 </div>
               </div>
             ))}
@@ -292,20 +306,19 @@ export default function Home() {
       <section
         className="py-24"
         style={{
-          background:
-            "linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(6,182,212,0.1) 100%)",
-          borderTop: "1px solid rgba(59,130,246,0.2)",
-          borderBottom: "1px solid rgba(59,130,246,0.2)",
+          background: "linear-gradient(135deg, rgba(1,156,226,0.07) 0%, rgba(6,182,212,0.05) 100%)",
+          borderTop: "1px solid rgba(1,156,226,0.15)",
+          borderBottom: "1px solid rgba(1,156,226,0.15)",
         }}
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2
             className="text-4xl md:text-5xl font-bold mb-6"
-            style={{ fontFamily: "var(--font-sora)" }}
+            style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
           >
             Ready to scale your pipeline?
           </h2>
-          <p className="text-lg mb-10" style={{ color: "#9CA3AF" }}>
+          <p className="text-lg mb-10" style={{ color: "#6E6E73" }}>
             Book a no-obligation discovery call with our team. We&apos;ll map your
             current GTM gaps and show you exactly how the GTM Layer system
             works for your market.
@@ -313,7 +326,7 @@ export default function Home() {
           <Link
             href="/contact"
             className="btn-glow inline-block px-10 py-4 rounded-xl text-base font-semibold text-white"
-            style={{ background: "linear-gradient(135deg, #3B82F6, #06B6D4)" }}
+            style={{ background: "linear-gradient(135deg, #019CE2, #06B6D4)" }}
           >
             Book a Discovery Call
           </Link>

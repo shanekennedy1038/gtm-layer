@@ -23,7 +23,6 @@ export default function ContactForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setState("sending");
-
     try {
       await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
@@ -45,11 +44,11 @@ export default function ContactForm() {
 
   const inputStyle = {
     width: "100%",
-    background: "rgba(255,255,255,0.04)",
-    border: "1px solid rgba(255,255,255,0.12)",
+    background: "#F5F5F7",
+    border: "1px solid rgba(0,0,0,0.12)",
     borderRadius: "0.75rem",
     padding: "0.875rem 1rem",
-    color: "#ffffff",
+    color: "#1D1D1F",
     fontSize: "0.875rem",
     outline: "none",
     transition: "border-color 0.2s",
@@ -58,8 +57,8 @@ export default function ContactForm() {
   const labelStyle = {
     display: "block",
     fontSize: "0.75rem",
-    fontWeight: 600,
-    color: "#9CA3AF",
+    fontWeight: 600 as const,
+    color: "#6E6E73",
     marginBottom: "0.5rem",
     textTransform: "uppercase" as const,
     letterSpacing: "0.08em",
@@ -69,32 +68,36 @@ export default function ContactForm() {
     <div
       className="rounded-2xl border p-8"
       style={{
-        background: "rgba(255,255,255,0.03)",
-        borderColor: "rgba(255,255,255,0.1)",
+        background: "#FFFFFF",
+        borderColor: "rgba(0,0,0,0.1)",
+        boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
       }}
     >
       {state === "success" ? (
         <div className="text-center py-12">
           <div
             className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center text-2xl"
-            style={{ background: "rgba(6,182,212,0.15)", color: "#06B6D4" }}
+            style={{
+              background: "rgba(6, 182, 212, 0.1)",
+              color: "#06B6D4",
+            }}
           >
             ✓
           </div>
           <h3
             className="text-2xl font-bold mb-3"
-            style={{ fontFamily: "var(--font-sora)" }}
+            style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
           >
             Message sent
           </h3>
-          <p className="text-sm" style={{ color: "#9CA3AF" }}>
+          <p className="text-sm" style={{ color: "#6E6E73" }}>
             Thanks for getting in touch. We&apos;ll be back in touch within one
             business day.
           </p>
           <button
             onClick={() => setState("idle")}
             className="mt-6 text-sm underline"
-            style={{ color: "#3B82F6" }}
+            style={{ color: "#019CE2" }}
           >
             Send another message
           </button>
@@ -116,10 +119,10 @@ export default function ContactForm() {
                 placeholder="Jane Smith"
                 style={inputStyle}
                 onFocus={(e) =>
-                  (e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)")
+                  (e.currentTarget.style.borderColor = "rgba(1, 156, 226, 0.5)")
                 }
                 onBlur={(e) =>
-                  (e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)")
+                  (e.currentTarget.style.borderColor = "rgba(0,0,0,0.12)")
                 }
               />
             </div>
@@ -137,10 +140,10 @@ export default function ContactForm() {
                 placeholder="jane@company.com"
                 style={inputStyle}
                 onFocus={(e) =>
-                  (e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)")
+                  (e.currentTarget.style.borderColor = "rgba(1, 156, 226, 0.5)")
                 }
                 onBlur={(e) =>
-                  (e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)")
+                  (e.currentTarget.style.borderColor = "rgba(0,0,0,0.12)")
                 }
               />
             </div>
@@ -160,10 +163,10 @@ export default function ContactForm() {
               placeholder="Your company name"
               style={inputStyle}
               onFocus={(e) =>
-                (e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)")
+                (e.currentTarget.style.borderColor = "rgba(1, 156, 226, 0.5)")
               }
               onBlur={(e) =>
-                (e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)")
+                (e.currentTarget.style.borderColor = "rgba(0,0,0,0.12)")
               }
             />
           </div>
@@ -182,10 +185,10 @@ export default function ContactForm() {
               placeholder="Tell us about your current GTM challenges, your target market, or what you'd like to cover in a discovery call."
               style={{ ...inputStyle, resize: "vertical" }}
               onFocus={(e) =>
-                (e.currentTarget.style.borderColor = "rgba(59,130,246,0.5)")
+                (e.currentTarget.style.borderColor = "rgba(1, 156, 226, 0.5)")
               }
               onBlur={(e) =>
-                (e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)")
+                (e.currentTarget.style.borderColor = "rgba(0,0,0,0.12)")
               }
             />
           </div>
@@ -194,8 +197,8 @@ export default function ContactForm() {
             <div
               className="mb-5 rounded-lg p-4 text-sm"
               style={{
-                background: "rgba(239,68,68,0.1)",
-                color: "#FCA5A5",
+                background: "rgba(239,68,68,0.06)",
+                color: "#DC2626",
                 border: "1px solid rgba(239,68,68,0.2)",
               }}
             >
@@ -206,9 +209,9 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={state === "sending"}
-            className="btn-glow w-full py-4 rounded-xl text-sm font-semibold text-white transition-opacity duration-200"
+            className="btn-glow w-full py-4 rounded-xl text-sm font-semibold text-white"
             style={{
-              background: "linear-gradient(135deg, #3B82F6, #06B6D4)",
+              background: "linear-gradient(135deg, #019CE2, #06B6D4)",
               opacity: state === "sending" ? 0.7 : 1,
               cursor: state === "sending" ? "not-allowed" : "pointer",
             }}
@@ -216,8 +219,12 @@ export default function ContactForm() {
             {state === "sending" ? "Sending…" : "Send Message"}
           </button>
 
-          <p className="text-xs text-center mt-4" style={{ color: "#4B5563" }}>
-            We respond within one business day. Your details will never be shared.
+          <p
+            className="text-xs text-center mt-4"
+            style={{ color: "#86868B" }}
+          >
+            We respond within one business day. Your details will never be
+            shared.
           </p>
         </form>
       )}

@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #0A0F1E;
-  --navy-800: #111827;
-  --navy-700: #1F2937;
-  --blue: #3B82F6;
+  --bg: #FFFFFF;
+  --bg-alt: #F5F5F7;
+  --bg-dark: #1D1D1F;
+  --text-primary: #1D1D1F;
+  --text-secondary: #6E6E73;
+  --text-tertiary: #86868B;
+  --blue: #019CE2;
   --teal: #06B6D4;
-  --white: #FFFFFF;
-  --grey-100: #F3F4F6;
-  --grey-300: #D1D5DB;
-  --grey-500: #6B7280;
-  --grey-400: #9CA3AF;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(1, 156, 226, 0.2);
 }
 
 * {
@@ -22,8 +22,8 @@ html {
 }
 
 body {
-  background-color: var(--navy);
-  color: var(--white);
+  background-color: var(--bg);
+  color: var(--text-primary);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,40 +33,41 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sora), system-ui, sans-serif;
 }
 
-.prose-gtm h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem; color: #fff; font-family: var(--font-sora), system-ui, sans-serif; }
-.prose-gtm h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #fff; font-family: var(--font-sora), system-ui, sans-serif; }
-.prose-gtm h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #e5e7eb; font-family: var(--font-sora), system-ui, sans-serif; }
-.prose-gtm p { margin-bottom: 1.25rem; color: #d1d5db; line-height: 1.75; }
-.prose-gtm ul { margin-bottom: 1.25rem; padding-left: 1.5rem; list-style-type: disc; color: #d1d5db; }
-.prose-gtm ol { margin-bottom: 1.25rem; padding-left: 1.5rem; list-style-type: decimal; color: #d1d5db; }
+.prose-gtm h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem; color: #1D1D1F; font-family: var(--font-sora), system-ui, sans-serif; }
+.prose-gtm h2 { font-size: 1.5rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1D1D1F; font-family: var(--font-sora), system-ui, sans-serif; }
+.prose-gtm h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #374151; font-family: var(--font-sora), system-ui, sans-serif; }
+.prose-gtm p { margin-bottom: 1.25rem; color: #374151; line-height: 1.75; }
+.prose-gtm ul { margin-bottom: 1.25rem; padding-left: 1.5rem; list-style-type: disc; color: #374151; }
+.prose-gtm ol { margin-bottom: 1.25rem; padding-left: 1.5rem; list-style-type: decimal; color: #374151; }
 .prose-gtm li { margin-bottom: 0.5rem; line-height: 1.75; }
-.prose-gtm strong { color: #fff; font-weight: 600; }
-.prose-gtm a { color: #3B82F6; text-decoration: underline; }
-.prose-gtm blockquote { border-left: 3px solid #3B82F6; padding-left: 1rem; margin: 1.5rem 0; color: #9CA3AF; font-style: italic; }
-.prose-gtm hr { border-color: #1F2937; margin: 2rem 0; }
-.prose-gtm code { background: #1F2937; padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875rem; color: #06B6D4; }
-.prose-gtm pre { background: #111827; padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1.5rem; }
+.prose-gtm strong { color: #1D1D1F; font-weight: 600; }
+.prose-gtm a { color: #019CE2; text-decoration: underline; }
+.prose-gtm blockquote { border-left: 3px solid #019CE2; padding-left: 1rem; margin: 1.5rem 0; color: #6E6E73; font-style: italic; }
+.prose-gtm hr { border-color: #E5E5EA; margin: 2rem 0; }
+.prose-gtm code { background: #F5F5F7; padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875rem; color: #019CE2; }
+.prose-gtm pre { background: #F5F5F7; border: 1px solid #E5E5EA; padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1.5rem; }
 .prose-gtm pre code { background: transparent; padding: 0; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #3B82F6, #06B6D4);
+  background: linear-gradient(135deg, #019CE2, #06B6D4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .btn-glow {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
-  transition: box-shadow 0.3s ease;
+  box-shadow: 0 2px 12px rgba(1, 156, 226, 0.35);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 .btn-glow:hover {
-  box-shadow: 0 0 32px rgba(59, 130, 246, 0.65);
+  box-shadow: 0 4px 20px rgba(1, 156, 226, 0.5);
+  transform: translateY(-1px);
 }
 
 .card-hover {
-  transition: transform 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }

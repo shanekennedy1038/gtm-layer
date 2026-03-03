@@ -21,8 +21,8 @@ export default function Footer() {
     <footer
       className="border-t"
       style={{
-        background: "#060912",
-        borderColor: "rgba(59, 130, 246, 0.15)",
+        background: "#1D1D1F",
+        borderColor: "rgba(255,255,255,0.08)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -33,21 +33,21 @@ export default function Footer() {
               <div
                 className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
                 style={{
-                  background: "linear-gradient(135deg, #3B82F6, #06B6D4)",
+                  background: "linear-gradient(135deg, #019CE2, #06B6D4)",
                 }}
               >
                 G
               </div>
               <span
-                className="text-lg font-bold tracking-tight"
+                className="text-lg font-bold tracking-tight text-white"
                 style={{ fontFamily: "var(--font-sora)" }}
               >
-                GTM<span className="text-blue-400"> Layer</span>
+                GTM<span style={{ color: "#019CE2" }}> Layer</span>
               </span>
             </Link>
             <p
               className="text-sm leading-relaxed max-w-xs"
-              style={{ color: "#6B7280" }}
+              style={{ color: "#86868B" }}
             >
               Agentic AI go-to-market for ERP partners across Australia and
               APAC. We scale your pipeline — without scaling headcount.
@@ -59,9 +59,11 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-xs font-medium px-3 py-1.5 rounded border transition-colors duration-200"
                 style={{
-                  color: "#9CA3AF",
-                  borderColor: "rgba(59, 130, 246, 0.2)",
+                  color: "#86868B",
+                  borderColor: "rgba(255,255,255,0.12)",
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#86868B")}
               >
                 LinkedIn
               </a>
@@ -73,7 +75,7 @@ export default function Footer() {
             <div key={group}>
               <h3
                 className="text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color: "#6B7280" }}
+                style={{ color: "#6E6E73" }}
               >
                 {group}
               </h3>
@@ -83,12 +85,12 @@ export default function Footer() {
                     <Link
                       href={link.href}
                       className="text-sm transition-colors duration-200"
-                      style={{ color: "#9CA3AF" }}
+                      style={{ color: "#86868B" }}
                       onMouseEnter={(e) =>
-                        (e.currentTarget.style.color = "#ffffff")
+                        (e.currentTarget.style.color = "#FFFFFF")
                       }
                       onMouseLeave={(e) =>
-                        (e.currentTarget.style.color = "#9CA3AF")
+                        (e.currentTarget.style.color = "#86868B")
                       }
                     >
                       {link.label}
@@ -102,13 +104,12 @@ export default function Footer() {
 
         <div
           className="pt-8 border-t flex flex-col md:flex-row items-center justify-between gap-4"
-          style={{ borderColor: "rgba(59, 130, 246, 0.1)" }}
+          style={{ borderColor: "rgba(255,255,255,0.06)" }}
         >
-          <p className="text-xs" style={{ color: "#4B5563" }}>
-            © {new Date().getFullYear()} GTM Layer Pty Ltd. All rights
-            reserved.
+          <p className="text-xs" style={{ color: "#6E6E73" }}>
+            © {new Date().getFullYear()} GTM Layer Pty Ltd. All rights reserved.
           </p>
-          <p className="text-xs" style={{ color: "#4B5563" }}>
+          <p className="text-xs" style={{ color: "#6E6E73" }}>
             Melbourne, Australia · Serving APAC
           </p>
         </div>

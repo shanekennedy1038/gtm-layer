@@ -85,14 +85,7 @@ export default function Services() {
   return (
     <div style={{ paddingTop: "80px" }}>
       {/* Hero */}
-      <section className="py-24 relative overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(6,182,212,0.1) 0%, transparent 70%)",
-          }}
-        />
+      <section className="py-24" style={{ background: "#FFFFFF" }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <span
             className="text-xs font-semibold uppercase tracking-widest"
@@ -102,7 +95,11 @@ export default function Services() {
           </span>
           <h1
             className="text-5xl md:text-6xl font-bold mt-4 mb-6"
-            style={{ fontFamily: "var(--font-sora)", letterSpacing: "-0.02em" }}
+            style={{
+              fontFamily: "var(--font-sora)",
+              letterSpacing: "-0.02em",
+              color: "#1D1D1F",
+            }}
           >
             Three layers.
             <br />
@@ -110,40 +107,54 @@ export default function Services() {
           </h1>
           <p
             className="text-lg leading-relaxed max-w-2xl mx-auto"
-            style={{ color: "#9CA3AF" }}
+            style={{ color: "#6E6E73" }}
           >
             GTM Layer is not a single tool or a single service. It&apos;s a stacked
-            system — intelligence, automation, and execution — that works together to
-            generate qualified pipeline for ERP partners.
+            system — intelligence, automation, and execution — that works
+            together to generate qualified pipeline for ERP partners.
           </p>
         </div>
       </section>
 
       {/* Data Layer */}
-      <section id="data-layer" className="py-24" style={{ background: "#060912" }}>
+      <section id="data-layer" className="py-24" style={{ background: "#F5F5F7" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-                style={{ background: "rgba(59,130,246,0.12)", color: "#3B82F6", border: "1px solid rgba(59,130,246,0.25)" }}>
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+                style={{
+                  background: "rgba(1, 156, 226, 0.1)",
+                  color: "#019CE2",
+                  border: "1px solid rgba(1, 156, 226, 0.25)",
+                }}
+              >
                 Layer 01 — Data Layer
               </div>
               <h2
                 className="text-4xl font-bold mb-6"
-                style={{ fontFamily: "var(--font-sora)" }}
+                style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
               >
                 Market intelligence built for the ERP ecosystem
               </h2>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "#9CA3AF" }}>
-                Most B2B data tools are built for horizontal markets. GTM Layer&apos;s
-                Data Layer is built exclusively for the ERP partner ecosystem — with
-                enrichment, scoring, and intelligence tailored to how SAP, Oracle,
-                Microsoft, and NetSuite partners actually sell.
+              <p
+                className="text-base leading-relaxed mb-6"
+                style={{ color: "#6E6E73" }}
+              >
+                Most B2B data tools are built for horizontal markets. GTM
+                Layer&apos;s Data Layer is built exclusively for the ERP partner
+                ecosystem — with enrichment, scoring, and intelligence tailored
+                to how SAP, Oracle, Microsoft, and NetSuite partners actually
+                sell.
               </p>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "#9CA3AF" }}>
-                We aggregate firmographic data, ERP install base signals, headcount
-                shifts, partner activity, and intent data into a centralised CRM that
-                becomes your single source of truth for who to target, when, and why.
+              <p
+                className="text-base leading-relaxed mb-8"
+                style={{ color: "#6E6E73" }}
+              >
+                We aggregate firmographic data, ERP install base signals,
+                headcount shifts, partner activity, and intent data into a
+                centralised CRM that becomes your single source of truth for
+                who to target, when, and why.
               </p>
               <div className="flex flex-col gap-3">
                 {[
@@ -152,8 +163,12 @@ export default function Services() {
                   "CRM integration with your existing stack",
                   "Continuous enrichment — not a one-time export",
                 ].map((pt) => (
-                  <div key={pt} className="flex items-start gap-3 text-sm" style={{ color: "#D1D5DB" }}>
-                    <span className="mt-1 text-blue-400" style={{ color: "#3B82F6" }}>✓</span>
+                  <div
+                    key={pt}
+                    className="flex items-start gap-3 text-sm"
+                    style={{ color: "#374151" }}
+                  >
+                    <span style={{ color: "#019CE2" }}>✓</span>
                     {pt}
                   </div>
                 ))}
@@ -164,18 +179,25 @@ export default function Services() {
               {dataAgents.map((agent) => (
                 <div
                   key={agent.name}
-                  className="card-hover rounded-xl p-5 border"
-                  style={{
-                    background: "rgba(59,130,246,0.05)",
-                    borderColor: "rgba(59,130,246,0.2)",
-                  }}
+                  className="card-hover rounded-xl p-5 border bg-white"
+                  style={{ borderColor: "rgba(1, 156, 226, 0.2)" }}
                 >
-                  <div className="w-6 h-6 mb-3 rounded"
-                    style={{ background: "linear-gradient(135deg, #3B82F6, #06B6D4)" }} />
-                  <h3 className="text-sm font-bold mb-2" style={{ fontFamily: "var(--font-sora)" }}>
+                  <div
+                    className="w-6 h-6 mb-3 rounded"
+                    style={{
+                      background: "linear-gradient(135deg, #019CE2, #06B6D4)",
+                    }}
+                  />
+                  <h3
+                    className="text-sm font-bold mb-2"
+                    style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
+                  >
                     {agent.name}
                   </h3>
-                  <p className="text-xs leading-relaxed" style={{ color: "#9CA3AF" }}>
+                  <p
+                    className="text-xs leading-relaxed"
+                    style={{ color: "#6E6E73" }}
+                  >
                     {agent.description}
                   </p>
                 </div>
@@ -186,25 +208,32 @@ export default function Services() {
       </section>
 
       {/* Agent Layer */}
-      <section id="agent-layer" className="py-24">
+      <section id="agent-layer" className="py-24" style={{ background: "#FFFFFF" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {agentAgents.map((agent) => (
                 <div
                   key={agent.name}
-                  className="card-hover rounded-xl p-5 border"
-                  style={{
-                    background: "rgba(6,182,212,0.05)",
-                    borderColor: "rgba(6,182,212,0.2)",
-                  }}
+                  className="card-hover rounded-xl p-5 border bg-white"
+                  style={{ borderColor: "rgba(6, 182, 212, 0.2)" }}
                 >
-                  <div className="w-6 h-6 mb-3 rounded"
-                    style={{ background: "linear-gradient(135deg, #06B6D4, #3B82F6)" }} />
-                  <h3 className="text-sm font-bold mb-2" style={{ fontFamily: "var(--font-sora)" }}>
+                  <div
+                    className="w-6 h-6 mb-3 rounded"
+                    style={{
+                      background: "linear-gradient(135deg, #06B6D4, #019CE2)",
+                    }}
+                  />
+                  <h3
+                    className="text-sm font-bold mb-2"
+                    style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
+                  >
                     {agent.name}
                   </h3>
-                  <p className="text-xs leading-relaxed" style={{ color: "#9CA3AF" }}>
+                  <p
+                    className="text-xs leading-relaxed"
+                    style={{ color: "#6E6E73" }}
+                  >
                     {agent.description}
                   </p>
                 </div>
@@ -212,23 +241,35 @@ export default function Services() {
             </div>
 
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-                style={{ background: "rgba(6,182,212,0.1)", color: "#06B6D4", border: "1px solid rgba(6,182,212,0.25)" }}>
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+                style={{
+                  background: "rgba(6, 182, 212, 0.08)",
+                  color: "#0891B2",
+                  border: "1px solid rgba(6, 182, 212, 0.25)",
+                }}
+              >
                 Layer 02 — Agent Layer
               </div>
               <h2
                 className="text-4xl font-bold mb-6"
-                style={{ fontFamily: "var(--font-sora)" }}
+                style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
               >
                 AI agents that do the intelligence work
               </h2>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "#9CA3AF" }}>
+              <p
+                className="text-base leading-relaxed mb-6"
+                style={{ color: "#6E6E73" }}
+              >
                 Our Agent Layer is a suite of specialist AI agents that operate
-                continuously on top of the Data Layer — surfacing signals, generating
-                outreach, briefing campaigns, and enriching accounts so your human
-                team never starts from zero.
+                continuously on top of the Data Layer — surfacing signals,
+                generating outreach, briefing campaigns, and enriching accounts
+                so your human team never starts from zero.
               </p>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "#9CA3AF" }}>
+              <p
+                className="text-base leading-relaxed mb-8"
+                style={{ color: "#6E6E73" }}
+              >
                 These are not generic AI tools. Each agent is trained on ERP
                 go-to-market contexts, understands the nuances of the partner
                 ecosystem, and is calibrated against your specific ICP and value
@@ -241,7 +282,11 @@ export default function Services() {
                   "Human review and approval gates for all outbound",
                   "Continuously improves on engagement feedback",
                 ].map((pt) => (
-                  <div key={pt} className="flex items-start gap-3 text-sm" style={{ color: "#D1D5DB" }}>
+                  <div
+                    key={pt}
+                    className="flex items-start gap-3 text-sm"
+                    style={{ color: "#374151" }}
+                  >
                     <span style={{ color: "#06B6D4" }}>✓</span>
                     {pt}
                   </div>
@@ -253,24 +298,33 @@ export default function Services() {
       </section>
 
       {/* GTM Execution Layer */}
-      <section id="gtm-layer" className="py-24" style={{ background: "#060912" }}>
+      <section id="gtm-layer" className="py-24" style={{ background: "#F5F5F7" }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
-              style={{ background: "rgba(139,92,246,0.1)", color: "#A78BFA", border: "1px solid rgba(139,92,246,0.25)" }}>
+            <div
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+              style={{
+                background: "rgba(124, 58, 237, 0.08)",
+                color: "#7C3AED",
+                border: "1px solid rgba(124, 58, 237, 0.2)",
+              }}
+            >
               Layer 03 — GTM Layer
             </div>
             <h2
               className="text-4xl font-bold mb-6"
-              style={{ fontFamily: "var(--font-sora)" }}
+              style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
             >
               Senior SDR execution. End to end.
             </h2>
-            <p className="text-base max-w-2xl mx-auto" style={{ color: "#9CA3AF" }}>
+            <p
+              className="text-base max-w-2xl mx-auto"
+              style={{ color: "#6E6E73" }}
+            >
               The GTM Layer is where intelligence and automation meet human
-              execution. Our senior SDRs use the Data Layer and Agent Layer outputs
-              to run focused, contextual outbound — and they&apos;re accountable to
-              pipeline, not just activity.
+              execution. Our senior SDRs use the Data Layer and Agent Layer
+              outputs to run focused, contextual outbound — and they&apos;re
+              accountable to pipeline, not just activity.
             </p>
           </div>
 
@@ -278,16 +332,19 @@ export default function Services() {
             {gtmServices.map((s) => (
               <div
                 key={s.name}
-                className="card-hover rounded-2xl p-7 border"
-                style={{
-                  background: "rgba(139,92,246,0.04)",
-                  borderColor: "rgba(139,92,246,0.18)",
-                }}
+                className="card-hover rounded-2xl p-7 border bg-white"
+                style={{ borderColor: "rgba(124, 58, 237, 0.15)" }}
               >
-                <h3 className="text-base font-bold mb-3" style={{ fontFamily: "var(--font-sora)", color: "#A78BFA" }}>
+                <h3
+                  className="text-base font-bold mb-3"
+                  style={{ fontFamily: "var(--font-sora)", color: "#7C3AED" }}
+                >
                   {s.name}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "#6E6E73" }}
+                >
                   {s.description}
                 </p>
               </div>
@@ -296,27 +353,33 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Pricing note */}
-      <section className="py-20">
+      {/* Engagement model */}
+      <section className="py-20" style={{ background: "#FFFFFF" }}>
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-4" style={{ fontFamily: "var(--font-sora)" }}>
+          <h2
+            className="text-3xl font-bold mb-4"
+            style={{ fontFamily: "var(--font-sora)", color: "#1D1D1F" }}
+          >
             Engagement model
           </h2>
-          <p className="text-base leading-relaxed mb-8" style={{ color: "#9CA3AF" }}>
+          <p
+            className="text-base leading-relaxed mb-8"
+            style={{ color: "#6E6E73" }}
+          >
             We work on a retained engagement basis — typically a three-month
             minimum with monthly reviews. Pricing is scoped based on your ICP
             size, market complexity, and the layers you need. Most engagements
             include all three layers from day one.
           </p>
-          <p className="text-sm mb-10" style={{ color: "#6B7280" }}>
+          <p className="text-sm mb-10" style={{ color: "#86868B" }}>
             We don&apos;t publish fixed pricing because the right scope looks
-            different for every partner. Book a discovery call and we&apos;ll
-            give you a clear picture of what&apos;s involved.
+            different for every partner. Book a discovery call and we&apos;ll give
+            you a clear picture of what&apos;s involved.
           </p>
           <Link
             href="/contact"
             className="btn-glow inline-block px-8 py-4 rounded-xl text-base font-semibold text-white"
-            style={{ background: "linear-gradient(135deg, #3B82F6, #06B6D4)" }}
+            style={{ background: "linear-gradient(135deg, #019CE2, #06B6D4)" }}
           >
             Get a Proposal
           </Link>
